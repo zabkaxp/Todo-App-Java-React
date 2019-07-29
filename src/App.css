@@ -1,0 +1,64 @@
+body {
+  text-align: center;
+}
+
+.header {
+  background-color: crimson;
+  color: white;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+  margin-bottom: 50px;
+}
+
+.header > * {
+  display: flex;
+}
+.header ul > * {
+  padding: 0 10px;
+}
+.footer {
+  background-color: crimson;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  width: 100vw;
+}
+.margin {
+  margin: 40px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form > * {
+  padding: 10px;
+}
+form > * > * {
+  margin: 10px;
+}
+
+.button {
+  border: none;
+  background-color: green;
+  padding: 8px 19px;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+}
+.button:hover {
+  color: lightgray;
+  background-color: darkgreen;
+}
+.invalidMsg {
+  background-color: lightsalmon;
+  color: darkred;
+  padding: 10px 30px;
+  display: inline-block;
+}
