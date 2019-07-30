@@ -11,7 +11,9 @@ class Login extends Component {
   submmitLogin = () => {
     if (this.state.login === "marta" && this.state.password === "password") {
       Authentication.setLoginSession(this.state.login);
-      this.props.history.push("/");
+      this.props.history.push(`/`);
+
+      window.location.reload();
     } else {
       this.setState({
         failureMessage: true
@@ -63,9 +65,9 @@ class Login extends Component {
             />
           </div>
           <div>
-            <div className="button" onClick={this.submmitLogin}>
+            <button className="button" onClick={this.submmitLogin}>
               Login
-            </div>
+            </button>
           </div>
         </form>
       </div>
