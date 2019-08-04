@@ -6,7 +6,7 @@ import Welcome from "./Welcome";
 import Login from "./Login";
 import Logout from "./Logout";
 import ErrorPage from "./ErrorPage.js";
-import AddTodo from "./AddTodo";
+import TodoComponent from "./TodoComponent";
 import TodosList from "./TodosList.js";
 import AuthenticatedRoute from "./AuthenticatedRoute";
 
@@ -17,8 +17,9 @@ const TodoApp = () => {
         <Header />
         <Switch>
           <Route path="/login" component={Login} />
-          <AuthenticatedRoute path="/todos" component={TodosList} />
-          <AuthenticatedRoute path="/todos:id" component={AddTodo} />
+          <AuthenticatedRoute path="/todos/:id" component={TodoComponent} />
+
+          <AuthenticatedRoute exact path="/todos" component={TodosList} />
           <AuthenticatedRoute path="/logout" component={Logout} />
           <Route path="/" component={Welcome} />
           <Route component={ErrorPage} />

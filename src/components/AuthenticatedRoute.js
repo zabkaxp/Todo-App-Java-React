@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
-import Authentication from "./Authentication.js";
+import Authentication from "./Authentication";
 
 class AuthenticatedRoute extends Component {
   render() {
-    if (Authentication.isUserLoggedIn()) {
-      return <Route {...this.props} />;
+    const loggedIn = () => Authentication.isUserLoggedin;
+    if (loggedIn) {
+      return (
+        <div>
+          {" "}
+          <Route {...this.props} />
+        </div>
+      );
     } else {
-      return <Redirect to="/login" />;
+      return (
+        <div>
+          <Redirect to="/login" />
+        </div>
+      );
     }
   }
 }

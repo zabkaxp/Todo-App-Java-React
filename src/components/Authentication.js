@@ -1,22 +1,28 @@
-import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+let user = sessionStorage.getItem("authenticatedUser");
 
-class Authentication extends Component {
+class Authentication {
   setLoginSession = login => {
-    sessionStorage.setItem("AuthenticatedUser", login);
+    sessionStorage.setItem("authenticatedUser", login);
   };
 
   logout() {
-    sessionStorage.removeItem("AuthenticatedUser");
+    sessionStorage.removeItem("authenticatedUser");
     window.location.reload();
   }
 
-  isUserLoggedin = () => {
-    let user = sessionStorage.getItem("AuthenticatedUser");
+  isUserLoggedin() {
+    if (user === null) return false;
+
+    return true;
+  }
+
+  getUsername = () => {
+    let user = sessionStorage.getItem("authenticatedUser");
+
     if (user === null) {
-      return false;
+      return "";
     } else {
-      return true;
+      return user;
     }
   };
 }

@@ -19,3 +19,32 @@ a {
   text-decoration: none;
   color: inherit;
 }
+ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 30px;
+}
+button {
+  padding: 5px 10px;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn-ylw {
+  border: none;
+  background-color: yellow;
+  border-radius: 2px;
+}
+
+.btn-red {
+  background-color: lightcoral;
+
+  border: none;
+  border-radius: 2px;
+}
+.item-ul {
+  border-top: 2px solid gray;
+  padding: 15px;
+}

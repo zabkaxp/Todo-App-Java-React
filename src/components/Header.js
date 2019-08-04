@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 import "../App.css";
 import Authentication from "./Authentication";
 
 class Header extends Component {
   render() {
-    const loggedIn = Authentication.isUserLoggedin();
-    console.log(loggedIn);
+    const loggedIn = () => Authentication.isUserLoggedin;
     return (
       <div className="header">
         <ul>
