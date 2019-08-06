@@ -18,7 +18,6 @@ const TodoApp = () => {
         <Switch>
           <Route path="/login" component={Login} />
           <AuthenticatedRoute path="/todos/:id" component={TodoComponent} />
-
           <AuthenticatedRoute exact path="/todos" component={TodosList} />
           <AuthenticatedRoute path="/logout" component={Logout} />
           <Route path="/" component={Welcome} />

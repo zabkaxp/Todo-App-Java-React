@@ -26,6 +26,8 @@ ul {
 }
 button {
   padding: 5px 10px;
+  border: none;
+  border-radius: 2px;
 }
 
 button:hover {
@@ -33,16 +35,15 @@ button:hover {
   cursor: pointer;
 }
 .btn-ylw {
-  border: none;
   background-color: yellow;
-  border-radius: 2px;
 }
 
 .btn-red {
   background-color: lightcoral;
+}
 
-  border: none;
-  border-radius: 2px;
+.btn-grn {
+  background-color: green;
 }
 .item-ul {
   border-top: 2px solid gray;

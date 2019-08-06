@@ -35,6 +35,10 @@ class TodosList extends Component {
       this.setState({ todos: response.data });
     });
   }
+
+  addTodoClicked() {
+    this.props.history.push(`/todos/-1`);
+  }
   render() {
     return (
       <div>
@@ -49,28 +53,35 @@ class TodosList extends Component {
           <li>Action </li>
         </ul>
         {this.state.todos.map(task => (
-          <ul key={task.id} className="item-ul">
-            <li>{task.description}</li>
-            <li>{moment(task.targetDate).format("YYYY-MM-DD")}</li>
-            <li>{task.done.toString()}</li>
-            <li>
-              <button
-                className="btn-ylw"
-                onClick={() => this.editTodoClicked(task.id)}
-              >
-                Edit
-              </button>
-            </li>
-            <li>
-              <button
-                className="btn-red"
-                onClick={() => this.deleteTodoClicked(task.id)}
-              >
-                Delete
-              </button>
-            </li>
-          </ul>
+          <div>
+            <ul key={task.id} className="item-ul">
+              <li>{task.description}</li>
+              <li>{moment(task.targetDate).format("YYYY-MM-DD")}</li>
+              <li>{task.done.toString()}</li>
+              <li>
+                <button
+                  className="btn-ylw"
+                  onClick={() => this.editTodoClicked(task.id)}
+                >
+                  Edit
+                </button>
+              </li>
+              <li>
+                <button
+                  className="btn-red"
+                  onClick={() => this.deleteTodoClicked(task.id)}
+                >
+                  Delete
+                </button>
+              </li>
+            </ul>
+          </div>
         ))}
+        <div>
+          <button className="btn-grn" onClick={() => this.addTodoClicked()}>
+            Add Task
+          </button>
+        </div>
       </div>
     );
   }
