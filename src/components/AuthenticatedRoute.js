@@ -4,7 +4,7 @@ import Authentication from "./Authentication";
 
 class AuthenticatedRoute extends Component {
   render() {
-    const loggedIn = () => Authentication.isUserLoggedin;
+    const loggedIn = () => Authentication.isUserLoggedin();
     if (loggedIn) {
       return (
         <div>
